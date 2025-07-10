@@ -209,7 +209,7 @@ const projects = [
   },
 ];
 
-export default function Index() {
+export default function Index({ showDetails = true }) {
   const [typedText, setTypedText] = useState("");
   const [activeSection, setActiveSection] = useState("home");
   const fullText = "AI/ML Engineer";
@@ -478,49 +478,29 @@ export default function Index() {
         id="home"
         className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-ai-cyan/10" />
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-ai-cyan/10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2 }}
+        />
         <div className="absolute inset-0">
+          {/* Animated background blobs */}
           <motion.div
             className="absolute top-20 left-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl"
-            animate={{
-              scale: 1.2,
-              opacity: 0.7,
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "linear",
-            }}
+            animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.7, 0.5] }}
+            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
           />
           <motion.div
             className="absolute bottom-32 right-16 w-96 h-96 bg-ai-cyan/10 rounded-full blur-3xl"
-            animate={{
-              scale: 0.8,
-              opacity: 0.8,
-            }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1,
-            }}
+            animate={{ scale: [1, 0.8, 1], opacity: [0.6, 0.8, 0.6] }}
+            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 1 }}
           />
           <motion.div
             className="absolute top-1/2 left-1/2 w-64 h-64 bg-data-purple/10 rounded-full blur-3xl"
-            animate={{
-              scale: 1.3,
-              opacity: 0.9,
-              x: 20,
-              y: 30,
-            }}
-            transition={{
-              duration: 15,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 0.5,
-            }}
+            animate={{ scale: [1, 1.3, 1], opacity: [0.7, 0.9, 0.7], x: [0, 20, 0], y: [0, 30, 0] }}
+            transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
           />
-
           {/* Floating particles */}
           {[...Array(6)].map((_, i) => (
             <motion.div
@@ -531,9 +511,9 @@ export default function Index() {
                 top: `${Math.random() * 100}%`,
               }}
               animate={{
-                y: -60,
-                opacity: 1,
-                scale: 1,
+                y: [0, -60, 0],
+                opacity: [0.7, 1, 0.7],
+                scale: [1, 1.2, 1],
               }}
               transition={{
                 duration: 4 + Math.random() * 2,
@@ -546,18 +526,11 @@ export default function Index() {
         </div>
 
         <div className="relative z-10 container mx-auto px-6 text-center">
-          
-
-          {/* Enhanced Profile Picture */}
+          {/* Animated Profile Picture */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.3 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              duration: 1.2,
-              delay: 0.1,
-              type: "spring",
-              stiffness: 100,
-            }}
+            initial={{ x: -120, opacity: 0 }}
+            animate={showDetails ? { x: 0, opacity: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.3, type: "spring", stiffness: 100 }}
             className="mb-12"
           >
             <motion.div
@@ -704,44 +677,38 @@ export default function Index() {
               
             </motion.div>
           </motion.div>
-
           <motion.h1
-            className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground via-primary to-ai-cyan bg-clip-text text-transparent"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-5xl md:text-7xl font-bold mb-6 gradient-text section-title"
+            initial={{ x: 120, opacity: 0 }}
+            animate={showDetails ? { x: 0, opacity: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.5, type: "spring", stiffness: 100 }}
           >
             Prakul Jain
           </motion.h1>
-
           <motion.div
             className="text-2xl md:text-3xl mb-8 h-12 flex items-center justify-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            initial={{ x: -120, opacity: 0 }}
+            animate={showDetails ? { x: 0, opacity: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.7, type: "spring", stiffness: 100 }}
           >
             <span className="text-primary font-semibold min-w-[200px] text-left">
               {typedText}
               <span className="animate-pulse">|</span>
             </span>
           </motion.div>
-
           <motion.p
             className="text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            initial={{ x: 120, opacity: 0 }}
+            animate={showDetails ? { x: 0, opacity: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.9, type: "spring", stiffness: 100 }}
           >
-            Passionate about building intelligent systems that solve real-world
-            problems. Specializing in deep learning, computer vision, and MLOps
-            with 6+ months of experience.
+            Passionate about building intelligent systems that solve real-world problems. Specializing in deep learning, computer vision, and MLOps with 6+ months of experience.
           </motion.p>
-
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            initial={{ y: 60, opacity: 0 }}
+            animate={showDetails ? { y: 0, opacity: 1 } : {}}
+            transition={{ duration: 0.8, delay: 1.1, type: "spring", stiffness: 100 }}
           >
             <motion.div
               whileHover={{ scale: 1.05, y: -2 }}
@@ -808,38 +775,39 @@ export default function Index() {
 
       {/* About Me Section */}
       <section id="about" className="py-20 px-6 border-b border-border/50">
-        <div className="container mx-auto max-w-6xl">
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+          className="container mx-auto max-w-6xl"
+        >
           <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={staggerContainer}
             className="grid lg:grid-cols-2 gap-16 items-center"
+            variants={staggerContainer}
           >
             {/* Left Column - Personal Info */}
-            <motion.div variants={fadeInUp}>
+            <motion.div variants={fadeInUp} whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
               <Badge variant="outline" className="mb-6">
                 About Me
               </Badge>
-
               {/* Professional Profile Section */}
               <div className="flex items-start gap-6 mb-8">
                 <motion.div
                   className="relative flex-shrink-0"
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.08 }}
                   transition={{ duration: 0.3 }}
                 >
                   <div className="w-24 h-24 rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-ai-cyan/20 border-2 border-border/50">
-                                      <img
-                    src="/prakul.png"
-                    alt="Prakul Jain Professional Headshot"
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      e.currentTarget.style.display = "none";
-                      e.currentTarget.nextElementSibling.style.display =
-                        "flex";
-                    }}
-                  />
+                    <img
+                      src="/prakul.png"
+                      alt="Prakul Jain Professional Headshot"
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.currentTarget.style.display = "none";
+                        e.currentTarget.nextElementSibling.style.display = "flex";
+                      }}
+                    />
                     <div
                       className="w-full h-full bg-gradient-to-br from-primary/30 to-ai-cyan/30 flex items-center justify-center text-3xl"
                       style={{ display: "none" }}
@@ -851,7 +819,6 @@ export default function Index() {
                     <div className="w-2 h-2 bg-green-400 rounded-full"></div>
                   </div>
                 </motion.div>
-
                 <div>
                   <h2 className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
                     Passionate About AI Innovation
@@ -862,46 +829,36 @@ export default function Index() {
                 </div>
               </div>
               <div className="space-y-6 text-muted-foreground leading-relaxed">
-                <p>
-                Hi! I'm Prakul Jain, an enthusiastic AI/ML Engineer with over 6 months of hands-on experience in developing intelligent solutions. Currently, I’m working at Regex Software Services in Jaipur, Rajasthan, where I focus on applying machine learning and artificial intelligence to solve real-world challenges. My journey began with a deep curiosity about how machines can learn and make decisions, driving me to pursue a career in this dynamic field.
-                </p>
-                <p>
+                <motion.p variants={fadeInUp}>
+                  Hi! I'm Prakul Jain, an enthusiastic AI/ML Engineer with over 6 months of hands-on experience in developing intelligent solutions. Currently, I'm working at Regex Software Services in Jaipur, Rajasthan, where I focus on applying machine learning and artificial intelligence to solve real-world challenges. My journey began with a deep curiosity about how machines can learn and make decisions, driving me to pursue a career in this dynamic field.
+                </motion.p>
+                <motion.p variants={fadeInUp}>
                   My experience includes working with modern AI frameworks like TensorFlow and PyTorch, developing machine learning models, and implementing data processing pipelines. I enjoy tackling complex problems and finding innovative solutions that can make a real difference in people's lives.
-                </p>
-                <p>
+                </motion.p>
+                <motion.p variants={fadeInUp}>
                   When I'm not working on AI projects, you'll find me exploring the latest research papers, contributing to open-source projects, or learning new technologies. I believe in continuous learning and staying updated with the rapidly evolving field of artificial intelligence.
-                </p>
+                </motion.p>
               </div>
-
               {/* Personal Stats */}
               <motion.div
                 className="mt-8 grid grid-cols-2 gap-6"
                 variants={staggerContainer}
               >
-                
-               
+                {/* Add animated stat cards here if desired */}
               </motion.div>
             </motion.div>
-
             {/* Right Column - Journey & Values */}
             <motion.div variants={fadeInUp} className="space-y-8">
               {/* My Journey */}
               <motion.div
                 className="relative p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-ai-cyan/5 border border-primary/10 cursor-pointer"
-                whileHover={{
-                  scale: 1.05,
-                  y: -8,
-                  transition: { duration: 0.4 },
-                }}
-                onHoverStart={() => {}}
+                whileHover={{ scale: 1.08, y: -8, boxShadow: "0 8px 32px 0 rgba(107,38,217,0.10)" }}
+                transition={{ duration: 0.4 }}
               >
                 <motion.div
                   className="absolute inset-0 bg-primary/10 rounded-2xl"
-                  whileHover={{
-                    scale: 1.05,
-                    opacity: 0.5,
-                    transition: { duration: 0.6 },
-                  }}
+                  whileHover={{ scale: 1.05, opacity: 0.5 }}
+                  transition={{ duration: 0.6 }}
                 />
                 <div className="relative flex items-center gap-3 mb-4">
                   <motion.div
@@ -912,35 +869,26 @@ export default function Index() {
                   </motion.div>
                   <h3 className="text-xl font-semibold">My Journey</h3>
                 </div>
-                <p className="relative text-muted-foreground leading-relaxed">
+                <motion.p className="relative text-muted-foreground leading-relaxed" variants={fadeInUp}>
                   Started as a passionate computer science student with a curiosity for AI, evolved into an AI/ML Engineer working on real-world projects at Regex Software Services. Every step has been driven by the desire to learn and apply AI technologies to solve practical problems.
-                </p>
+                </motion.p>
               </motion.div>
-
               {/* Core Values */}
               <motion.div
                 className="relative p-6 rounded-2xl bg-gradient-to-br from-ai-cyan/5 to-data-purple/5 border border-ai-cyan/10 cursor-pointer"
-                whileHover={{
-                  scale: 1.05,
-                  y: -8,
-                  transition: { duration: 0.4 },
-                }}
+                whileHover={{ scale: 1.08, y: -8, boxShadow: "0 8px 32px 0 rgba(0,204,255,0.10)" }}
+                transition={{ duration: 0.4 }}
               >
                 <motion.div
                   className="absolute inset-0 bg-ai-cyan/10 rounded-2xl"
-                  whileHover={{
-                    scale: 1.05,
-                    opacity: 0.5,
-                    transition: { duration: 0.6 },
-                  }}
+                  whileHover={{ scale: 1.05, opacity: 0.5 }}
+                  transition={{ duration: 0.6 }}
                 />
                 <div className="relative flex items-center gap-3 mb-4">
                   <motion.div
                     className="w-10 h-10 rounded-lg bg-ai-cyan/10 flex items-center justify-center"
-                    whileHover={{
-                      scale: 1.2,
-                      transition: { duration: 0.8 },
-                    }}
+                    whileHover={{ scale: 1.2 }}
+                    transition={{ duration: 0.8 }}
                   >
                     <Target className="w-5 h-5 text-ai-cyan" />
                   </motion.div>
@@ -949,85 +897,73 @@ export default function Index() {
                 <ul className="relative space-y-2 text-muted-foreground">
                   <motion.li
                     className="flex items-center gap-2"
-                    whileHover={{ x: 5, transition: { duration: 0.2 } }}
+                    whileHover={{ x: 5 }}
+                    transition={{ duration: 0.2 }}
                   >
                     <motion.div
                       className="w-1.5 h-1.5 rounded-full bg-primary"
-                      whileHover={{
-                        scale: 2,
-                        transition: { duration: 0.3 },
-                      }}
+                      whileHover={{ scale: 2 }}
+                      transition={{ duration: 0.3 }}
                     />
                     Innovation through ethical AI development
                   </motion.li>
                   <motion.li
                     className="flex items-center gap-2"
-                    whileHover={{ x: 5, transition: { duration: 0.2 } }}
+                    whileHover={{ x: 5 }}
+                    transition={{ duration: 0.2 }}
                   >
                     <motion.div
                       className="w-1.5 h-1.5 rounded-full bg-ai-cyan"
-                      whileHover={{
-                        scale: 2,
-                        transition: { duration: 0.3 },
-                      }}
+                      whileHover={{ scale: 2 }}
+                      transition={{ duration: 0.3 }}
                     />
                     Continuous learning and knowledge sharing
                   </motion.li>
                   <motion.li
                     className="flex items-center gap-2"
-                    whileHover={{ x: 5, transition: { duration: 0.2 } }}
+                    whileHover={{ x: 5 }}
+                    transition={{ duration: 0.2 }}
                   >
                     <motion.div
                       className="w-1.5 h-1.5 rounded-full bg-matrix-green"
-                      whileHover={{
-                        scale: 2,
-                        transition: { duration: 0.3 },
-                      }}
+                      whileHover={{ scale: 2 }}
+                      transition={{ duration: 0.3 }}
                     />
                     Building solutions that create positive impact
                   </motion.li>
                 </ul>
               </motion.div>
-
               {/* Fun Facts */}
               <motion.div
                 className="relative p-6 rounded-2xl bg-gradient-to-br from-matrix-green/5 to-data-purple/5 border border-matrix-green/10 cursor-pointer"
-                whileHover={{
-                  scale: 1.05,
-                  y: -8,
-                  transition: { duration: 0.4 },
-                }}
+                whileHover={{ scale: 1.08, y: -8, boxShadow: "0 8px 32px 0 rgba(34,197,94,0.10)" }}
+                transition={{ duration: 0.4 }}
               >
                 <motion.div
                   className="absolute inset-0 bg-matrix-green/10 rounded-2xl"
-                  whileHover={{
-                    scale: 1.05,
-                    opacity: 0.5,
-                    transition: { duration: 0.6 },
-                  }}
+                  whileHover={{ scale: 1.05, opacity: 0.5 }}
+                  transition={{ duration: 0.6 }}
                 />
                 <div className="relative flex items-center gap-3 mb-4">
                   <motion.div
                     className="w-10 h-10 rounded-lg bg-matrix-green/10 flex items-center justify-center"
-                    whileHover={{
-                      scale: 1.2,
-                      transition: { duration: 0.6 },
-                    }}
+                    whileHover={{ scale: 1.2 }}
+                    transition={{ duration: 0.6 }}
                   >
                     <Zap className="w-5 h-5 text-matrix-green" />
                   </motion.div>
                   <h3 className="text-xl font-semibold">Beyond Code</h3>
                 </div>
-                <p className="relative text-muted-foreground leading-relaxed">
-                  Coffee enthusiast ☕, sci-fi book lover 📚, weekend hiker 🥾,
+                <motion.p className="relative text-muted-foreground leading-relaxed" variants={fadeInUp}>
+                  Coffee enthusiast ☕, sci-fi book lover ��, weekend hiker 🥾,
                   and proud mentor to the next generation of AI engineers. I
                   believe the best ideas come from diverse experiences and
                   perspectives.
-                </p>
+                </motion.p>
               </motion.div>
             </motion.div>
           </motion.div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Experience Section */}
@@ -1162,9 +1098,7 @@ export default function Index() {
               <Badge variant="outline" className="mb-4">
                 About Me
               </Badge>
-              <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
-                Building the Future with AI
-              </h2>
+              <h2 className="section-title">Building the Future with AI</h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 I'm a passionate AI/ML engineer with expertise in developing
                 cutting-edge machine learning solutions. My journey spans from
@@ -1177,9 +1111,9 @@ export default function Index() {
                 transition={{ duration: 0.2 }}
               >
                 <Button
+                  className="btn-accent"
                   variant="outline"
                   size="sm"
-                  className="border-primary/30 hover:border-primary hover:bg-primary/5 transition-all duration-300"
                   onClick={() => {
                     const link = document.createElement("a");
                     link.href = "/Prakul Jain Resume.pdf";
@@ -1232,7 +1166,7 @@ export default function Index() {
                 className="cursor-pointer"
                 animate={floatingAnimation}
               >
-                <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
+                <Card className="card card-accent">
                   <CardContent className="p-6">
                     <motion.div
                       whileHover={{ scale: 1.1 }}
@@ -1269,7 +1203,7 @@ export default function Index() {
                   },
                 }}
               >
-                <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-xl hover:shadow-ai-cyan/10 transition-all duration-300">
+                <Card className="card card-accent">
                   <CardContent className="p-6">
                     <motion.div
                       whileHover={{ scale: 1.15 }}
@@ -1314,7 +1248,7 @@ export default function Index() {
                   },
                 }}
               >
-                <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-xl hover:shadow-matrix-green/10 transition-all duration-300">
+                <Card className="card card-accent">
                   <CardContent className="p-6">
                     <motion.div
                       whileHover={{ scale: 1.15 }}
@@ -1360,7 +1294,7 @@ export default function Index() {
                   },
                 }}
               >
-                <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-xl hover:shadow-data-purple/10 transition-all duration-300">
+                <Card className="card card-accent">
                   <CardContent className="p-6">
                     <motion.div
                       whileHover={{ scale: 1.1 }}
@@ -1393,7 +1327,15 @@ export default function Index() {
             <Badge variant="outline" className="mb-4">
               Technical Skills
             </Badge>
-            <h2 className="text-4xl font-bold mb-4">My Expertise</h2>
+            <motion.h2
+              className="section-title"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              My Expertise
+            </motion.h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Proficient in cutting-edge technologies and frameworks for
               building scalable AI solutions
@@ -1418,6 +1360,7 @@ export default function Index() {
                   scale: 1.2,
                   y: -15,
                   rotateY: 10,
+                  boxShadow: "0 8px 32px 0 hsl(var(--accent)/0.25)",
                   transition: { duration: 0.5 },
                 }}
                 className="cursor-pointer relative"
@@ -1436,70 +1379,28 @@ export default function Index() {
                   className="absolute inset-0 rounded-lg"
                   whileHover={{
                     background:
-                      "radial-gradient(circle, rgba(107, 38, 217, 0.1) 0%, transparent 70%)",
+                      "radial-gradient(circle, hsl(var(--accent)/0.15) 0%, transparent 70%)",
                     scale: [1, 1.2, 1],
                     transition: { duration: 0.8 },
                   }}
                 />
-                <Card className="relative bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 h-full">
+                <Card className="relative card card-accent h-full">
                   <CardContent className="p-6 text-center">
                     <motion.div
                       className={`w-16 h-16 rounded-2xl ${skill.bgColor} flex items-center justify-center mx-auto mb-4 relative overflow-hidden`}
                       whileHover={{
                         scale: 1.3,
+                        rotate: 10,
+                        boxShadow: "0 0 24px 4px hsl(var(--accent)/0.25)",
                         transition: {
                           duration: 0.8,
                           ease: "easeInOut",
                         },
                       }}
-                      animate={{
-                        scale: [1, 1.05, 1],
-                        transition: {
-                          duration: 4 + (index % 2),
-                          repeat: Infinity,
-                          ease: "easeInOut",
-                          delay: index * 0.3,
-                        },
-                      }}
                     >
-                      <motion.div
-                        className="absolute inset-0 rounded-2xl opacity-0"
-                        whileHover={{
-                          opacity: [0, 0.3, 0],
-                          transition: { duration: 1, ease: "linear" },
-                        }}
-                        style={{
-                          background: `conic-gradient(from 0deg, rgba(107, 38, 217, 0.3), transparent, rgba(107, 38, 217, 0.3))`,
-                        }}
-                      />
-                      <motion.span
-                        className="text-3xl relative z-10"
-                        whileHover={{
-                          scale: 1.2,
-                          transition: {
-                            duration: 0.8,
-                            ease: "easeInOut",
-                          },
-                        }}
-                        animate={{
-                          rotate: [0, -5, 5, 0],
-                          transition: {
-                            duration: 6,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                            delay: index * 0.1,
-                          },
-                        }}
-                      >
-                        {skill.icon}
-                      </motion.span>
+                      <span className={`text-3xl ${skill.color}`}>{skill.icon}</span>
                     </motion.div>
-                    <motion.h3
-                      className={`font-semibold ${skill.color} group-hover:scale-105 transition-transform`}
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      {skill.name}
-                    </motion.h3>
+                    <h3 className="font-semibold mb-2 gradient-text">{skill.name}</h3>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -1539,7 +1440,15 @@ export default function Index() {
             <Badge variant="outline" className="mb-4">
               Portfolio
             </Badge>
-            <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
+            <motion.h2
+              className="section-title"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              Featured Projects
+            </motion.h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Showcasing innovative AI/ML solutions that demonstrate technical
               excellence and real-world impact
@@ -1557,15 +1466,20 @@ export default function Index() {
               <motion.div
                 key={project.title}
                 variants={fadeInUp}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{
-                  scale: 1.03,
-                  y: -8,
-                  transition: { duration: 0.2 },
+                  scale: 1.06,
+                  y: -10,
+                  boxShadow: "0 8px 32px 0 hsl(var(--primary)/0.18)",
+                  transition: { duration: 0.3 },
                 }}
+                transition={{ duration: 0.7, delay: index * 0.15, type: "spring", stiffness: 80 }}
+                viewport={{ once: true }}
                 className="cursor-pointer"
               >
                 <Card
-                  className={`group hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 h-full ${
+                  className={`group card card-accent hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 h-full ${
                     project.featured
                       ? "md:col-span-2 lg:col-span-1 lg:row-span-2"
                       : ""
@@ -1575,11 +1489,17 @@ export default function Index() {
                     <div className="flex items-start justify-between mb-4">
                       <motion.div
                         className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center"
-                        whileHover={{
-                          scale: 1.1,
-                          backgroundColor: "rgba(107, 38, 217, 0.2)",
-                          transition: { duration: 0.2 },
+                        animate={{
+                          rotate: [0, 10, -10, 0],
+                          scale: [1, 1.1, 1],
                         }}
+                        transition={{
+                          duration: 6,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                          delay: index * 0.2,
+                        }}
+                        whileHover={{ scale: 1.2, rotate: 20 }}
                       >
                         <motion.div
                           whileHover={{ rotate: 360 }}
@@ -1645,12 +1565,12 @@ export default function Index() {
                       {project.tech.map((tech) => (
                         <motion.div
                           key={tech}
-                          whileHover={{ scale: 1.05 }}
-                          transition={{ duration: 0.1 }}
+                          whileHover={{ scale: 1.12, rotate: 6 }}
+                          transition={{ duration: 0.15 }}
                         >
                           <Badge
                             variant="secondary"
-                            className="text-xs hover:bg-primary/20 transition-colors"
+                            className="text-xs hover:bg-primary/20 transition-colors animate-pulse"
                           >
                             {tech}
                           </Badge>
@@ -1681,9 +1601,15 @@ export default function Index() {
             <Badge variant="outline" className="mb-4">
               Get In Touch
             </Badge>
-            <h2 className="text-4xl font-bold mb-6">
+            <motion.h2
+              className="section-title"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               Let's Build Something Amazing
-            </h2>
+            </motion.h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Ready to discuss your next AI project? I'm always excited to
               collaborate on innovative solutions.
@@ -2003,7 +1929,11 @@ export default function Index() {
               <Card className="bg-card/50 backdrop-blur-sm border-border/50">
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
-                  <form
+                  <motion.form
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.7, delay: 0.2, type: "spring", stiffness: 80 }}
+                    viewport={{ once: true }}
                     className="space-y-6"
                     onSubmit={handleFormSubmit}
                   >
@@ -2070,7 +2000,7 @@ export default function Index() {
                         {loading ? "Sending..." : "Send Message"}
                       </Button>
                     </motion.div>
-                  </form>
+                  </motion.form>
                 </CardContent>
               </Card>
             </motion.div>
