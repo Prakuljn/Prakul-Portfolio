@@ -1531,28 +1531,7 @@ export default function Index({ showDetails = true }) {
                             <GitBranch className="w-4 h-4" />
                           </Button>
                         </motion.div>
-                        <motion.div
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          <Button
-                            size="sm"
-                            variant="ghost"
-                            className="p-2 hover:bg-primary/10"
-                            onClick={() => {
-                              if (project.demo && project.demo !== "#") {
-                                window.open(project.demo, "_blank");
-                              } else {
-                                toast({ 
-                                  title: "Demo Link", 
-                                  description: "Live demo will be available soon!" 
-                                });
-                              }
-                            }}
-                          >
-                            <ExternalLink className="w-4 h-4" />
-                          </Button>
-                        </motion.div>
+
                       </div>
                     </div>
                     <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
