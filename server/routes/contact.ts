@@ -10,7 +10,7 @@ export const handleContact: RequestHandler = async (req, res) => {
 
   // Temporarily hardcode credentials for testing
   const gmailUser = "prakuljn3105@gmail.com";
-  const gmailPassword = "ozcd zytb pixi nyvs";
+  const gmailPassword = "mepi lxlf tmyz dfzt";
 
   try {
     console.log('Attempting to send email...');
