@@ -192,11 +192,11 @@ const projects = [
     featured: true,
   },
   {
-    title: "Computer Vision Pipeline",
+    title: "Dotsy Bot - Automated Query Bot",
     description:
-      "Real-time object detection and classification system for autonomous vehicles",
-    tech: ["OpenCV", "YOLO", "TensorRT"],
-    github: "#",
+      "Real-time user query detection and automatic detection of query type and intention of the user and resolve the problem as per the query type and intention of the user APIs to deliver dynamic, real-time responses and web-sourced insights",
+    tech: ["Langraph", "FastAPI", "Docker", "PostgreSQL"],
+    github: "https://github.com/Prakuljn/dotsy",
     
   },
   {
@@ -830,13 +830,13 @@ export default function Index({ showDetails = true }) {
               </div>
               <div className="space-y-6 text-muted-foreground leading-relaxed">
                 <motion.p variants={fadeInUp}>
-                  Hi! I'm Prakul Jain, an enthusiastic AI/ML Engineer with over 6 months of hands-on experience in developing intelligent solutions. Currently, I'm working at Regex Software Services in Jaipur, Rajasthan, where I focus on applying machine learning and artificial intelligence to solve real-world challenges. My journey began with a deep curiosity about how machines can learn and make decisions, driving me to pursue a career in this dynamic field.
-                </motion.p>
+                Hi! I'm Prakul Jain, an enthusiastic AI/ML Engineer with over 6 months of hands-on experience in developing intelligent and data-driven solutions. Currently, I'm working at Dotsquares India Pvt. Ltd. in Jaipur, Rajasthan, where I focus on creating AI-powered chatbots and conversational agents that enhance user experiences and streamline business operations.                </motion.p>
                 <motion.p variants={fadeInUp}>
-                  My experience includes working with modern AI frameworks like TensorFlow and PyTorch, developing machine learning models, and implementing data processing pipelines. I enjoy tackling complex problems and finding innovative solutions that can make a real difference in people's lives.
-                </motion.p>
+                My journey into artificial intelligence began with a deep curiosity about how machines can learn, reason, and make decisions. This passion has driven me to explore and apply cutting-edge techniques in machine learning, natural language processing (NLP), and deep learning.
+
+I have experience working with modern frameworks such as TensorFlow and PyTorch, developing robust ML models, and building efficient data processing pipelines. I enjoy solving complex real-world problems and crafting innovative AI solutions that make a meaningful impact.                </motion.p>
                 <motion.p variants={fadeInUp}>
-                  When I'm not working on AI projects, you'll find me exploring the latest research papers, contributing to open-source projects, or learning new technologies. I believe in continuous learning and staying updated with the rapidly evolving field of artificial intelligence.
+                When I'm not working on AI projects, you'll find me exploring the latest research papers, contributing to open-source projects, or learning new technologies. I believe in continuous learning and staying updated with the rapidly evolving field of artificial intelligence.
                 </motion.p>
               </div>
               {/* Personal Stats */}
@@ -870,7 +870,7 @@ export default function Index({ showDetails = true }) {
                   <h3 className="text-xl font-semibold">My Journey</h3>
                 </div>
                 <motion.p className="relative text-muted-foreground leading-relaxed" variants={fadeInUp}>
-                  Started as a passionate computer science student with a curiosity for AI, evolved into an AI/ML Engineer working on real-world projects at Regex Software Services. Every step has been driven by the desire to learn and apply AI technologies to solve practical problems.
+                  Started as a passionate computer science student with a curiosity for AI, evolved into an AI/ML Engineer working on real-world projects at Dotsquares India. Every step has been driven by the desire to learn and apply AI technologies to solve practical problems.
                 </motion.p>
               </motion.div>
               {/* Core Values */}
@@ -981,8 +981,7 @@ export default function Index({ showDetails = true }) {
             </Badge>
             <h2 className="text-4xl font-bold mb-4">My Journey</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              6+ months of experience building cutting-edge AI solutions across
-              startups and Fortune 500 companies
+              6+ months of experience 
             </p>
           </motion.div>
 
@@ -997,8 +996,84 @@ export default function Index({ showDetails = true }) {
             />
 
             <div className="space-y-12">
-             
-              {/* Early Position */}
+              {/* Current Position - Dotsquares */}
+              <motion.div
+                className="relative flex items-start gap-8"
+                variants={bounceIn}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+              >
+                <motion.div
+                  className="w-16 h-16 rounded-2xl bg-primary/20 border-4 border-primary flex items-center justify-center relative z-10"
+                  whileHover={{
+                    scale: 1.1,
+                    transition: { duration: 0.3 },
+                  }}
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-primary/30 rounded-2xl"
+                    animate={{
+                      scale: [1, 1.1, 1],
+                    }}
+                    transition={{
+                      duration: 6,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  />
+                  <Brain className="w-8 h-8 text-primary relative z-10" />
+                </motion.div>
+
+                <motion.div
+                  className="flex-1 bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 relative overflow-hidden"
+                  whileHover={{
+                    scale: 1.02,
+                    y: -2,
+                    transition: { duration: 0.3 },
+                  }}
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-0"
+                    whileHover={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                  <div className="relative">
+                    <div className="flex items-start justify-between mb-3">
+                      <div>
+                        <h3 className="text-xl font-bold text-primary">
+                          AI/ML ENGINEER
+                        </h3>
+                        <div className="text-lg font-semibold">
+                          Dotsquares India Pvt. Ltd.
+                        </div>
+                      </div>
+                      <div className="text-sm text-muted-foreground bg-primary/10 px-3 py-1 rounded-full">
+                        SEP 2024 - Present
+                      </div>
+                    </div>
+                    <p className="text-muted-foreground mb-4 leading-relaxed">
+                      Started my professional career as an AI/ML Engineer at Dotsquares India. Building intelligent systems and AI-powered solutions to solve real-world problems.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {["Python", "AI/ML", "Deep Learning", "NLP", "LLM", "LangGraph", "FastAPI", "Docker", "PostgreSQL", "AWS"].map(
+                        (tech) => (
+                          <motion.span
+                            key={tech}
+                            className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full"
+                            whileHover={{ scale: 1.05, y: -1 }}
+                            transition={{ duration: 0.2 }}
+                          >
+                            {tech}
+                          </motion.span>
+                        ),
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              {/* Past Position - Regex */}
               <motion.div
                 className="relative flex items-start gap-8"
                 variants={bounceIn}
@@ -1051,7 +1126,7 @@ export default function Index({ showDetails = true }) {
                         </div>
                       </div>
                       <div className="text-sm text-muted-foreground bg-data-purple/10 px-3 py-1 rounded-full">
-                        DEC 2024 - Present
+                        DEC 2023 - SEP 2024
                       </div>
                     </div>
                     <p className="text-muted-foreground mb-4 leading-relaxed">

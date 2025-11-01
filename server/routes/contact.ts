@@ -8,9 +8,24 @@ export const handleContact: RequestHandler = async (req, res) => {
     return res.status(400).json({ success: false, error: "All fields are required." });
   }
 
-  // Temporarily hardcode credentials for testing
-  const gmailUser = "prakuljn3105@gmail.com";
-  const gmailPassword = "mepi lxlf tmyz dfzt";
+  // Get credentials from environment variables
+  const gmailUser = process.env.GMAIL_USER || "prakuljn3105@gmail.com";
+  const gmailPassword = process.env.GMAIL_APP_PASSWORD;
+
+  // Debug: Log environment variables (password masked)
+  console.log('Environment check:');
+  console.log('GMAIL_USER:', gmailUser);
+  console.log('GMAIL_APP_PASSWORD exists:', !!gmailPassword);
+  console.log('GMAIL_APP_PASSWORD length:', gmailPassword ? gmailPassword.length : 0);
+
+  // Check if app password is configured
+  if (!gmailPassword) {
+    console.error('Gmail App Password not configured in environment variables');
+    return res.status(500).json({ 
+      success: false, 
+      error: "Email service not configured. Please contact directly via prakuljn3105@gmail.com"
+    });
+  }
 
   try {
     console.log('Attempting to send email...');
@@ -33,6 +48,7 @@ export const handleContact: RequestHandler = async (req, res) => {
     const mailOptions = {
       from: gmailUser,
       to: gmailUser, // Send to yourself
+      replyTo: email, // Allow replying to the sender
       subject: `Portfolio Contact: ${subject}`,
       html: `
         <h2>New Contact Form Submission</h2>
@@ -53,7 +69,7 @@ export const handleContact: RequestHandler = async (req, res) => {
     console.error('Email send error:', error);
     res.status(500).json({ 
       success: false, 
-      error: `Failed to send email: ${error.message}` 
+      error: `Failed to send email. Please try contacting directly at prakuljn3105@gmail.com` 
     });
   }
 }; 
