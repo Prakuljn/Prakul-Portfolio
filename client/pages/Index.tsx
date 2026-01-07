@@ -188,7 +188,7 @@ const projects = [
       "Built a GenAI assistant using Gemini LLM, Serper API, and Tavily to generate business strategies via prompt workflows and Streamlit",
     tech: ["Gemini LLM", "Serper API", "Tavily", "Streamlit"],
     github: "https://github.com/Prakuljn/SmartOPs-AI",
-    
+
     featured: true,
   },
   {
@@ -197,7 +197,7 @@ const projects = [
       "Real-time user query detection and automatic detection of query type and intention of the user and resolve the problem as per the query type and intention of the user APIs to deliver dynamic, real-time responses and web-sourced insights",
     tech: ["Langraph", "FastAPI", "Docker", "PostgreSQL"],
     github: "https://github.com/Prakuljn/dotsy",
-    
+
   },
   {
     title: "BeuatySyncPro - Smart Salon Management",
@@ -205,7 +205,7 @@ const projects = [
       "Developed a Flask-based web application with a SQL database backend and an integrated AI-powered chatbot using Langgraph with Serper, Tavily, and LLM APIs to deliver dynamic, real-time responses and web-sourced insights",
     tech: ["Flask", "SQL", "Langgraph", "Serper", "Tavily", "LLM APIs"],
     github: "https://github.com/Prakuljn/Beuaty-Sync-Pro",
-    
+
   },
 ];
 
@@ -345,11 +345,10 @@ export default function Index({ showDetails = true }) {
                 <motion.button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                    activeSection === item.id
-                      ? "text-primary bg-primary/10 border border-primary/20"
-                      : "text-muted-foreground hover:text-foreground hover:bg-card/50"
-                  }`}
+                  className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${activeSection === item.id
+                    ? "text-primary bg-primary/10 border border-primary/20"
+                    : "text-muted-foreground hover:text-foreground hover:bg-card/50"
+                    }`}
                   whileHover={{ y: -2, scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
                   transition={{ duration: 0.2 }}
@@ -457,11 +456,10 @@ export default function Index({ showDetails = true }) {
                       .getElementById("mobile-menu")
                       ?.classList.add("hidden");
                   }}
-                  className={`flex items-center gap-2 p-3 rounded-lg text-sm font-medium transition-all duration-300 ${
-                    activeSection === item.id
-                      ? "text-primary bg-primary/10 border border-primary/20"
-                      : "text-muted-foreground hover:text-foreground hover:bg-card/50 border border-transparent"
-                  }`}
+                  className={`flex items-center gap-2 p-3 rounded-lg text-sm font-medium transition-all duration-300 ${activeSection === item.id
+                    ? "text-primary bg-primary/10 border border-primary/20"
+                    : "text-muted-foreground hover:text-foreground hover:bg-card/50 border border-transparent"
+                    }`}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -670,11 +668,11 @@ export default function Index({ showDetails = true }) {
                   🚀
                 </motion.div>
 
-                
+
               </div>
 
               {/* Photo replacement instructions */}
-              
+
             </motion.div>
           </motion.div>
           <motion.h1
@@ -702,7 +700,7 @@ export default function Index({ showDetails = true }) {
             animate={showDetails ? { x: 0, opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.9, type: "spring", stiffness: 100 }}
           >
-            Passionate about building intelligent systems that solve real-world problems. Specializing in deep learning, computer vision, and MLOps with 6+ months of experience.
+            Passionate about building intelligent systems that solve real-world problems. Specializing in deep learning, computer vision, and MLOps with 1+ year of experience.
           </motion.p>
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -715,7 +713,7 @@ export default function Index({ showDetails = true }) {
               whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.2 }}
             >
-             
+
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05, y: -2 }}
@@ -824,19 +822,19 @@ export default function Index({ showDetails = true }) {
                     Passionate About AI Innovation
                   </h2>
                   <p className="text-muted-foreground text-lg">
-                    AI/ML Engineer • 6+ Months Experience
+                    AI/ML Engineer • 1+ Year Experience
                   </p>
                 </div>
               </div>
               <div className="space-y-6 text-muted-foreground leading-relaxed">
                 <motion.p variants={fadeInUp}>
-                Hi! I'm Prakul Jain, an enthusiastic AI/ML Engineer with over 6 months of hands-on experience in developing intelligent and data-driven solutions. Currently, I'm working at Dotsquares India Pvt. Ltd. in Jaipur, Rajasthan, where I focus on creating AI-powered chatbots and conversational agents that enhance user experiences and streamline business operations.                </motion.p>
+                  Hi! I'm Prakul Jain, an enthusiastic AI/ML Engineer with over 1 year of hands-on experience in developing intelligent and data-driven solutions. Currently, I'm working at ATV Tech Solutions, where I focus on applying advanced data analysis and machine learning techniques to drive insights and solutions.                </motion.p>
                 <motion.p variants={fadeInUp}>
-                My journey into artificial intelligence began with a deep curiosity about how machines can learn, reason, and make decisions. This passion has driven me to explore and apply cutting-edge techniques in machine learning, natural language processing (NLP), and deep learning.
+                  My journey into artificial intelligence began with a deep curiosity about how machines can learn, reason, and make decisions. This passion has driven me to explore and apply cutting-edge techniques in machine learning, natural language processing (NLP), and deep learning.
 
-I have experience working with modern frameworks such as TensorFlow and PyTorch, developing robust ML models, and building efficient data processing pipelines. I enjoy solving complex real-world problems and crafting innovative AI solutions that make a meaningful impact.                </motion.p>
+                  I have experience working with modern frameworks such as TensorFlow and PyTorch, developing robust ML models, and building efficient data processing pipelines. I enjoy solving complex real-world problems and crafting innovative AI solutions that make a meaningful impact.                </motion.p>
                 <motion.p variants={fadeInUp}>
-                When I'm not working on AI projects, you'll find me exploring the latest research papers, contributing to open-source projects, or learning new technologies. I believe in continuous learning and staying updated with the rapidly evolving field of artificial intelligence.
+                  When I'm not working on AI projects, you'll find me exploring the latest research papers, contributing to open-source projects, or learning new technologies. I believe in continuous learning and staying updated with the rapidly evolving field of artificial intelligence.
                 </motion.p>
               </div>
               {/* Personal Stats */}
@@ -981,7 +979,7 @@ I have experience working with modern frameworks such as TensorFlow and PyTorch,
             </Badge>
             <h2 className="text-4xl font-bold mb-4">My Journey</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              6+ months of experience 
+              1+ year of experience
             </p>
           </motion.div>
 
@@ -997,6 +995,7 @@ I have experience working with modern frameworks such as TensorFlow and PyTorch,
 
             <div className="space-y-12">
               {/* Current Position - Dotsquares */}
+              {/* Current Position - ATV Tech Solutions */}
               <motion.div
                 className="relative flex items-start gap-8"
                 variants={bounceIn}
@@ -1042,14 +1041,91 @@ I have experience working with modern frameworks such as TensorFlow and PyTorch,
                     <div className="flex items-start justify-between mb-3">
                       <div>
                         <h3 className="text-xl font-bold text-primary">
+                          DATA SCIENTIST
+                        </h3>
+                        <div className="text-lg font-semibold">
+                          ATV Tech Solutions
+                        </div>
+                      </div>
+                      <div className="text-sm text-muted-foreground bg-primary/10 px-3 py-1 rounded-full">
+                        DEC 2025 - Present
+                      </div>
+                    </div>
+                    <p className="text-muted-foreground mb-4 leading-relaxed">
+                      Working as a Data Scientist at ATV Tech Solutions. Applying advanced data analysis and machine learning techniques to drive insights and solutions.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {["Python", "Data Science", "Machine Learning", "Deep Learning", "SQL"].map(
+                        (tech) => (
+                          <motion.span
+                            key={tech}
+                            className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full"
+                            whileHover={{ scale: 1.05, y: -1 }}
+                            transition={{ duration: 0.2 }}
+                          >
+                            {tech}
+                          </motion.span>
+                        ),
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              {/* Past Position - Dotsquares */}
+              <motion.div
+                className="relative flex items-start gap-8"
+                variants={bounceIn}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+              >
+                <motion.div
+                  className="w-16 h-16 rounded-2xl bg-data-purple/20 border-4 border-data-purple flex items-center justify-center relative z-10"
+                  whileHover={{
+                    scale: 1.1,
+                    transition: { duration: 0.3 },
+                  }}
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-data-purple/30 rounded-2xl"
+                    animate={{
+                      scale: [1, 1.1, 1],
+                    }}
+                    transition={{
+                      duration: 6,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  />
+                  <Brain className="w-8 h-8 text-data-purple relative z-10" />
+                </motion.div>
+
+                <motion.div
+                  className="flex-1 bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 relative overflow-hidden"
+                  whileHover={{
+                    scale: 1.02,
+                    y: -2,
+                    transition: { duration: 0.3 },
+                  }}
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-data-purple/10 to-transparent opacity-0"
+                    whileHover={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                  <div className="relative">
+                    <div className="flex items-start justify-between mb-3">
+                      <div>
+                        <h3 className="text-xl font-bold text-data-purple">
                           AI/ML ENGINEER
                         </h3>
                         <div className="text-lg font-semibold">
                           Dotsquares India Pvt. Ltd.
                         </div>
                       </div>
-                      <div className="text-sm text-muted-foreground bg-primary/10 px-3 py-1 rounded-full">
-                        SEP 2024 - Present
+                      <div className="text-sm text-muted-foreground bg-data-purple/10 px-3 py-1 rounded-full">
+                        SEP 2025 - NOV 2025
                       </div>
                     </div>
                     <p className="text-muted-foreground mb-4 leading-relaxed">
@@ -1060,7 +1136,7 @@ I have experience working with modern frameworks such as TensorFlow and PyTorch,
                         (tech) => (
                           <motion.span
                             key={tech}
-                            className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full"
+                            className="px-3 py-1 bg-data-purple/10 text-data-purple text-sm rounded-full"
                             whileHover={{ scale: 1.05, y: -1 }}
                             transition={{ duration: 0.2 }}
                           >
@@ -1126,7 +1202,7 @@ I have experience working with modern frameworks such as TensorFlow and PyTorch,
                         </div>
                       </div>
                       <div className="text-sm text-muted-foreground bg-data-purple/10 px-3 py-1 rounded-full">
-                        DEC 2023 - SEP 2024
+                        DEC 2024 - SEP 2025
                       </div>
                     </div>
                     <p className="text-muted-foreground mb-4 leading-relaxed">
@@ -1136,7 +1212,7 @@ I have experience working with modern frameworks such as TensorFlow and PyTorch,
                       systems.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      {["Python","MLOps", "Machine Learning","Scikit-learn","Deep Learning", "SQL", "Github","AWS","Flask","Docker","FastAPI"].map(
+                      {["Python", "MLOps", "Machine Learning", "Scikit-learn", "Deep Learning", "SQL", "Github", "AWS", "Flask", "Docker", "FastAPI"].map(
                         (tech) => (
                           <motion.span
                             key={tech}
@@ -1155,7 +1231,7 @@ I have experience working with modern frameworks such as TensorFlow and PyTorch,
             </div>
           </div>
 
-          
+
         </div>
       </section>
 
@@ -1220,9 +1296,9 @@ I have experience working with modern frameworks such as TensorFlow and PyTorch,
                   whileHover={{ scale: 1.05, x: 5 }}
                   transition={{ duration: 0.2 }}
                 >
-                  
+
                 </motion.div>
-                
+
               </div>
             </motion.div>
 
@@ -1496,7 +1572,7 @@ I have experience working with modern frameworks such as TensorFlow and PyTorch,
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             >
-             
+
             </motion.div>
           </motion.div>
         </div>
@@ -1554,11 +1630,10 @@ I have experience working with modern frameworks such as TensorFlow and PyTorch,
                 className="cursor-pointer"
               >
                 <Card
-                  className={`group card card-accent hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 h-full ${
-                    project.featured
-                      ? "md:col-span-2 lg:col-span-1 lg:row-span-2"
-                      : ""
-                  }`}
+                  className={`group card card-accent hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 h-full ${project.featured
+                    ? "md:col-span-2 lg:col-span-1 lg:row-span-2"
+                    : ""
+                    }`}
                 >
                   <CardContent className="p-6">
                     <div className="flex items-start justify-between mb-4">
@@ -1596,9 +1671,9 @@ I have experience working with modern frameworks such as TensorFlow and PyTorch,
                               if (project.github && project.github !== "#") {
                                 window.open(project.github, "_blank");
                               } else {
-                                toast({ 
-                                  title: "GitHub Link", 
-                                  description: "GitHub repository link will be available soon!" 
+                                toast({
+                                  title: "GitHub Link",
+                                  description: "GitHub repository link will be available soon!"
                                 });
                               }
                             }}
@@ -1804,7 +1879,7 @@ I have experience working with modern frameworks such as TensorFlow and PyTorch,
                           className="font-semibold text-lg mb-1"
                           whileHover={{ x: 5 }}
                           transition={{ duration: 0.2 }}
-                          
+
                           onClick={() => {
                             window.location.href = "tel:+91 9256639008";
                           }}
@@ -1815,7 +1890,7 @@ I have experience working with modern frameworks such as TensorFlow and PyTorch,
                           className="text-muted-foreground"
                           whileHover={{ x: 5 }}
                           transition={{ duration: 0.2, delay: 0.1 }}
-                          
+
                           onClick={() => {
                             window.location.href = "tel:+91 9256639008";
                           }}
@@ -1835,9 +1910,9 @@ I have experience working with modern frameworks such as TensorFlow and PyTorch,
                     </div>
                   </motion.div>
 
-                  
-                     
-                 
+
+
+
                 </div>
               </motion.div>
 
