@@ -2202,7 +2202,7 @@ export default function Index({ showDetails = true }) {
               >
                 Passionate about building intelligent systems that solve
                 real-world problems. Specializing in deep learning, computer
-                vision, and MLOps with 6+ months of experience.
+                vision, and MLOps with 1+ year of experience.
               </motion.p>
 
               {/* Social Links */}
