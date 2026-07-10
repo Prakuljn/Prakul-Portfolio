@@ -111,108 +111,35 @@ const rippleEffect = {
   },
 };
 
-const skillLogos = [
-  {
-    name: "Python",
-    icon: "🐍",
-    color: "text-yellow-400",
-    bgColor: "bg-yellow-400/10",
-  },
-  {
-    name: "TensorFlow",
-    icon: "🧠",
-    color: "text-orange-400",
-    bgColor: "bg-orange-400/10",
-  },
-  {
-    name: "PyTorch",
-    icon: "🔥",
-    color: "text-red-400",
-    bgColor: "bg-red-400/10",
-  },
-  {
-    name: "Scikit-learn",
-    icon: "��",
-    color: "text-blue-400",
-    bgColor: "bg-blue-400/10",
-  },
-  {
-    name: "Docker",
-    icon: "🐳",
-    color: "text-blue-500",
-    bgColor: "bg-blue-500/10",
-  },
-
-  {
-    name: "AWS",
-    icon: "☁️",
-    color: "text-orange-500",
-    bgColor: "bg-orange-500/10",
-  },
-  {
-    name: "GitHub",
-    icon: "🌿",
-    color: "text-green-400",
-    bgColor: "bg-green-400/10",
-  },
-  {
-    name: "Jupyter",
-    icon: "📓",
-    color: "text-orange-400",
-    bgColor: "bg-orange-400/10",
-  },
-  {
-    name: "MySQL",
-    icon: "🍃",
-    color: "text-green-500",
-    bgColor: "bg-green-500/10",
-  },
-  {
-    name: "FastAPI",
-    icon: "⚡",
-    color: "text-cyan-400",
-    bgColor: "bg-cyan-400/10",
-  },
-  {
-    name: "MLflow",
-    icon: "🚀",
-    color: "text-primary",
-    bgColor: "bg-primary/10",
-  },
-];
+// Updated imports for icons and GlassCard
+import { skillLogos } from "@/data/skills";
 
 const projects = [
   {
-    title: "SmartOps Al - GenAl Strategy Assitant",
-    description:
-      "Built a GenAI assistant using Gemini LLM, Serper API, and Tavily to generate business strategies via prompt workflows and Streamlit",
-    tech: ["Gemini LLM", "Serper API", "Tavily", "Streamlit"],
+    title: "SmartOps AI - GenAI Strategy Assistant",
+    description: "Built a GenAI assistant using Gemini LLM, Streamlit, and FastAPI for CRUD operations, integrating data pipelines for business strategy generation.",
+    tech: ["Gemini LLM", "Streamlit", "FastAPI", "Databricks"],
     github: "https://github.com/Prakuljn/SmartOPs-AI",
-
     featured: true,
   },
   {
-    title: "Dotsy Bot - Automated Query Bot",
-    description:
-      "Real-time user query detection and automatic detection of query type and intention of the user and resolve the problem as per the query type and intention of the user APIs to deliver dynamic, real-time responses and web-sourced insights",
-    tech: ["Langraph", "FastAPI", "Docker", "PostgreSQL"],
+    title: "Dotsy Bot - Real-time Query Bot",
+    description: "Developed a FastAPI-powered bot with Docker, PostgreSQL, and Kafka streams to detect user intent and deliver dynamic, data-driven responses.",
+    tech: ["FastAPI", "Docker", "PostgreSQL", "Kafka"],
     github: "https://github.com/Prakuljn/dotsy",
-
   },
   {
     title: "BeuatySyncPro - Smart Salon Management",
-    description:
-      "Developed a Flask-based web application with a SQL database backend and an integrated AI-powered chatbot using Langgraph with Serper, Tavily, and LLM APIs to deliver dynamic, real-time responses and web-sourced insights",
+    description: "Developed a Flask-based web application with a SQL database backend and an integrated AI-powered chatbot using Langgraph with Serper, Tavily, and LLM APIs to deliver dynamic, real-time responses and web-sourced insights.",
     tech: ["Flask", "SQL", "Langgraph", "Serper", "Tavily", "LLM APIs"],
     github: "https://github.com/Prakuljn/Beuaty-Sync-Pro",
-
   },
 ];
 
 export default function Index({ showDetails = true }) {
   const [typedText, setTypedText] = useState("");
   const [activeSection, setActiveSection] = useState("home");
-  const fullText = "AI/ML Engineer";
+  const fullText = "Data Scientist";
 
   const { toast } = useToast();
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
@@ -327,7 +254,7 @@ export default function Index({ showDetails = true }) {
                   Prakul Jain
                 </div>
                 <div className="text-xs text-muted-foreground">
-                  AI/ML Engineer
+                  Data Scientist
                 </div>
               </div>
             </motion.div>
@@ -700,7 +627,7 @@ export default function Index({ showDetails = true }) {
             animate={showDetails ? { x: 0, opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.9, type: "spring", stiffness: 100 }}
           >
-            Passionate about building intelligent systems that solve real-world problems. Specializing in deep learning, computer vision, and MLOps with 1+ year of experience.
+            Passionate about turning data into actionable insights. Experienced across the data lifecycle—cleaning, EDA, feature engineering, and model development—using Databricks, AWS, Kafka, Docker, and CI/CD pipelines. Focused on building scalable FastAPI applications and GenAI solutions.
           </motion.p>
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -819,22 +746,20 @@ export default function Index({ showDetails = true }) {
                 </motion.div>
                 <div>
                   <h2 className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
-                    Passionate About AI Innovation
+                    Prakul Jain
                   </h2>
                   <p className="text-muted-foreground text-lg">
-                    AI/ML Engineer • 1+ Year Experience
+                    Data Scientist
                   </p>
                 </div>
               </div>
               <div className="space-y-6 text-muted-foreground leading-relaxed">
                 <motion.p variants={fadeInUp}>
-                  Hi! I'm Prakul Jain, an enthusiastic AI/ML Engineer with over 1 year of hands-on experience in developing intelligent and data-driven solutions. Currently, I'm working at ATV Tech Solutions, where I focus on applying advanced data analysis and machine learning techniques to drive insights and solutions.                </motion.p>
+                  Hi! I'm Prakul Jain, a Data Scientist with over 2 years of experience building AI-powered and data-driven solutions. Currently, I work at ATV Tech Solutions, where I develop scalable AI applications using Databricks, AWS, FastAPI, Python, MLOps, and Generative AI.</motion.p>
                 <motion.p variants={fadeInUp}>
-                  My journey into artificial intelligence began with a deep curiosity about how machines can learn, reason, and make decisions. This passion has driven me to explore and apply cutting-edge techniques in machine learning, natural language processing (NLP), and deep learning.
-
-                  I have experience working with modern frameworks such as TensorFlow and PyTorch, developing robust ML models, and building efficient data processing pipelines. I enjoy solving complex real-world problems and crafting innovative AI solutions that make a meaningful impact.                </motion.p>
+                  My work includes building end-to-end data pipelines, fine-tuning Large Language Models (LoRA), developing Python backend services, deploying ML solutions, and creating production-ready AI systems. I'm passionate about solving real-world problems through AI and continuously exploring new technologies.</motion.p>
                 <motion.p variants={fadeInUp}>
-                  When I'm not working on AI projects, you'll find me exploring the latest research papers, contributing to open-source projects, or learning new technologies. I believe in continuous learning and staying updated with the rapidly evolving field of artificial intelligence.
+                  I enjoy working across the entire AI lifecycle—from data processing and model development to deployment, optimization, and production monitoring. I'm passionate about learning new technologies, solving challenging problems, and building reliable AI systems that create real business impact.
                 </motion.p>
               </div>
               {/* Personal Stats */}
@@ -868,7 +793,7 @@ export default function Index({ showDetails = true }) {
                   <h3 className="text-xl font-semibold">My Journey</h3>
                 </div>
                 <motion.p className="relative text-muted-foreground leading-relaxed" variants={fadeInUp}>
-                  Started as a passionate computer science student with a curiosity for AI, evolved into an AI/ML Engineer working on real-world projects at Dotsquares India. Every step has been driven by the desire to learn and apply AI technologies to solve practical problems.
+                  Every project has been a learning opportunity. From building machine learning models to developing production-ready AI systems, I've grown by solving real-world challenges, embracing new technologies, and continuously improving my engineering mindset.
                 </motion.p>
               </motion.div>
               {/* Core Values */}
@@ -903,7 +828,7 @@ export default function Index({ showDetails = true }) {
                       whileHover={{ scale: 2 }}
                       transition={{ duration: 0.3 }}
                     />
-                    Innovation through ethical AI development
+                    🚀 Building scalable and reliable AI solutions
                   </motion.li>
                   <motion.li
                     className="flex items-center gap-2"
@@ -915,7 +840,8 @@ export default function Index({ showDetails = true }) {
                       whileHover={{ scale: 2 }}
                       transition={{ duration: 0.3 }}
                     />
-                    Continuous learning and knowledge sharing
+                    📚 Continuous learning and embracing new technologies
+
                   </motion.li>
                   <motion.li
                     className="flex items-center gap-2"
@@ -927,7 +853,7 @@ export default function Index({ showDetails = true }) {
                       whileHover={{ scale: 2 }}
                       transition={{ duration: 0.3 }}
                     />
-                    Building solutions that create positive impact
+                    💡 Solving real-world problems through innovation
                   </motion.li>
                 </ul>
               </motion.div>
@@ -953,10 +879,7 @@ export default function Index({ showDetails = true }) {
                   <h3 className="text-xl font-semibold">Beyond Code</h3>
                 </div>
                 <motion.p className="relative text-muted-foreground leading-relaxed" variants={fadeInUp}>
-                  Coffee enthusiast ☕, sci-fi book lover ��, weekend hiker 🥾,
-                  and proud mentor to the next generation of AI engineers. I
-                  believe the best ideas come from diverse experiences and
-                  perspectives.
+                  Outside of work, I enjoy exploring the latest AI research, experimenting with new technologies, contributing to personal projects, and sharing what I learn with the developer community. I believe continuous learning is the key to building better AI systems.
                 </motion.p>
               </motion.div>
             </motion.div>
@@ -979,7 +902,6 @@ export default function Index({ showDetails = true }) {
             </Badge>
             <h2 className="text-4xl font-bold mb-4">My Journey</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              1+ year of experience
             </p>
           </motion.div>
 
@@ -1052,10 +974,10 @@ export default function Index({ showDetails = true }) {
                       </div>
                     </div>
                     <p className="text-muted-foreground mb-4 leading-relaxed">
-                      Working as a Data Scientist at ATV Tech Solutions. Applying advanced data analysis and machine learning techniques to drive insights and solutions.
+                      Building Generative AI applications and end-to-end data pipelines using Databricks and AWS. Working on LLM evaluation, LLM-as-a-Judge, model fine-tuning (LoRA), MLOps, and Python backend development to deliver scalable AI solutions for production.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      {["Python", "Data Science", "Machine Learning", "Deep Learning", "SQL"].map(
+                      {["Databricks", "AWS", "GenAI", "LLMs", "LoRA", "MLOps", "FastAPI", "Python", "Delta Lake"].map(
                         (tech) => (
                           <motion.span
                             key={tech}
@@ -1129,10 +1051,10 @@ export default function Index({ showDetails = true }) {
                       </div>
                     </div>
                     <p className="text-muted-foreground mb-4 leading-relaxed">
-                      Started my professional career as an AI/ML Engineer at Dotsquares India. Building intelligent systems and AI-powered solutions to solve real-world problems.
+                      Developed AI and machine learning solutions for real-world business problems, including recommendation systems, NLP applications, backend APIs, and model deployment while gaining hands-on experience across the ML lifecycle.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      {["Python", "AI/ML", "Deep Learning", "NLP", "LLM", "LangGraph", "FastAPI", "Docker", "PostgreSQL", "AWS"].map(
+                      {["Python", "Machine Learning", "NLP", "FastAPI", "Docker", "AWS", "LangChain", "PostgreSQL"].map(
                         (tech) => (
                           <motion.span
                             key={tech}
@@ -1206,13 +1128,10 @@ export default function Index({ showDetails = true }) {
                       </div>
                     </div>
                     <p className="text-muted-foreground mb-4 leading-relaxed">
-                      Started my AI journey building recommendation systems and
-                      data visualizations. Contributed to open-source ML
-                      libraries and gained hands-on experience with production
-                      systems.
+                      Started my professional journey by building machine learning models, data analysis solutions, and backend applications while learning software engineering best practices and collaborating on production-focused AI projects..
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      {["Python", "MLOps", "Machine Learning", "Scikit-learn", "Deep Learning", "SQL", "Github", "AWS", "Flask", "Docker", "FastAPI"].map(
+                      {["Python", "Scikit-learn", "Machine Learning", "Deep Learning", "SQL", "Git", "Flask", "Docker"].map(
                         (tech) => (
                           <motion.span
                             key={tech}
@@ -1249,12 +1168,9 @@ export default function Index({ showDetails = true }) {
               <Badge variant="outline" className="mb-4">
                 About Me
               </Badge>
-              <h2 className="section-title">Building the Future with AI</h2>
+              <h2 className="section-title">Building Intelligent AI Solutions with GenAI</h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                I'm a passionate AI/ML engineer with expertise in developing
-                cutting-edge machine learning solutions. My journey spans from
-                research to production, focusing on scalable AI systems that
-                drive business value.
+                I'm a Data Scientist passionate about building intelligent AI systems using Generative AI, Databricks, AWS, and Python. From end-to-end data pipelines to LLM fine-tuning and production-ready deployments, I enjoy creating scalable solutions that deliver measurable business value.
               </p>
               <motion.div
                 className="mb-6"
@@ -1325,9 +1241,9 @@ export default function Index({ showDetails = true }) {
                     >
                       <Cpu className="w-8 h-8 text-primary mb-4" />
                     </motion.div>
-                    <h3 className="font-semibold mb-2">Deep Learning</h3>
+                    <h3 className="font-semibold mb-2">🤖 Generative AI</h3>
                     <p className="text-sm text-muted-foreground">
-                      Neural networks, CNNs, RNNs, and transformer architectures
+                      Building intelligent applications using Large Language Models, prompt engineering, and AI-powered workflows.
                     </p>
                   </CardContent>
                 </Card>
@@ -1370,9 +1286,9 @@ export default function Index({ showDetails = true }) {
                     >
                       <Network className="w-8 h-8 text-ai-cyan mb-4" />
                     </motion.div>
-                    <h3 className="font-semibold mb-2">MLOps</h3>
+                    <h3 className="font-semibold mb-2">📊 Databricks</h3>
                     <p className="text-sm text-muted-foreground">
-                      Model deployment, monitoring, and CI/CD pipelines
+                      Developing scalable data pipelines, Delta Lake solutions, LLM evaluation, and production AI workflows.
                     </p>
                   </CardContent>
                 </Card>
@@ -1416,9 +1332,8 @@ export default function Index({ showDetails = true }) {
                     >
                       <Database className="w-8 h-8 text-matrix-green mb-4" />
                     </motion.div>
-                    <h3 className="font-semibold mb-2">AWS</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Deveploped ML models and deployed them on cloud platforms
+                    <h3 className="font-semibold mb-2">☁️ AWS & MLOps</h3>
+                    <p className="text-sm text-muted-foreground">Deploying, monitoring, and managing machine learning applications using AWS and modern MLOps practices.
                     </p>
                   </CardContent>
                 </Card>
@@ -1453,9 +1368,8 @@ export default function Index({ showDetails = true }) {
                     >
                       <Zap className="w-8 h-8 text-data-purple mb-4" />
                     </motion.div>
-                    <h3 className="font-semibold mb-2">AI Research</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Published papers in top-tier ML conferences
+                    <h3 className="font-semibold mb-2">⚡ Python & FastAPI</h3>
+                    <p className="text-sm text-muted-foreground">Developing backend APIs and scalable services to power AI and machine learning applications.
                     </p>
                   </CardContent>
                 </Card>
@@ -1467,7 +1381,9 @@ export default function Index({ showDetails = true }) {
 
       {/* Skills Section */}
       <section id="skills" className="py-20 px-6 bg-secondary/20">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto max-w-7xl">
+
+          {/* Heading */}
           <motion.div
             initial="initial"
             whileInView="animate"
@@ -1476,8 +1392,9 @@ export default function Index({ showDetails = true }) {
             className="text-center mb-16"
           >
             <Badge variant="outline" className="mb-4">
-              Technical Skills
+              Technologies I Work With
             </Badge>
+
             <motion.h2
               className="section-title"
               initial={{ opacity: 0, y: 40 }}
@@ -1485,20 +1402,22 @@ export default function Index({ showDetails = true }) {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              My Expertise
+              My Technical Expertise
             </motion.h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Proficient in cutting-edge technologies and frameworks for
-              building scalable AI solutions
+
+            <p className="text-muted-foreground max-w-3xl mx-auto">
+              Building intelligent, scalable, and production-ready AI solutions
+              across the modern AI stack.
             </p>
           </motion.div>
 
+          {/* Skills Grid */}
           <motion.div
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
           >
             {skillLogos.map((skill, index) => (
               <motion.div
@@ -1508,73 +1427,83 @@ export default function Index({ showDetails = true }) {
                 whileInView="animate"
                 viewport={{ once: true }}
                 whileHover={{
-                  scale: 1.2,
-                  y: -15,
-                  rotateY: 10,
-                  boxShadow: "0 8px 32px 0 hsl(var(--accent)/0.25)",
-                  transition: { duration: 0.5 },
-                }}
-                className="cursor-pointer relative"
-                animate={{
-                  y: [0, -3, 0],
-                  rotate: [0, 1, 0],
+                  y: -12,
+                  scale: 1.03,
                   transition: {
-                    duration: 3 + (index % 3),
+                    duration: 0.3,
+                    ease: "easeOut",
+                  },
+                }}
+                animate={{
+                  y: [0, -4, 0],
+                  transition: {
+                    duration: 4 + (index % 3),
                     repeat: Infinity,
                     ease: "easeInOut",
                     delay: index * 0.2,
                   },
                 }}
+                className="group h-full"
               >
-                <motion.div
-                  className="absolute inset-0 rounded-lg"
-                  whileHover={{
-                    background:
-                      "radial-gradient(circle, hsl(var(--accent)/0.15) 0%, transparent 70%)",
-                    scale: [1, 1.2, 1],
-                    transition: { duration: 0.8 },
-                  }}
-                />
-                <Card className="relative card card-accent h-full">
-                  <CardContent className="p-6 text-center">
+                <Card className="relative h-full overflow-hidden border border-accent/20 bg-card/70 backdrop-blur-md transition-all duration-300 hover:border-accent hover:shadow-[0_10px_40px_rgba(59,130,246,0.18)]">
+
+                  {/* Glow Effect */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-accent/5 via-transparent to-accent/10" />
+
+                  <CardContent className="relative z-10 flex flex-col h-full p-6">
+
+                    {/* Icon */}
                     <motion.div
-                      className={`w-16 h-16 rounded-2xl ${skill.bgColor} flex items-center justify-center mx-auto mb-4 relative overflow-hidden`}
                       whileHover={{
-                        scale: 1.3,
-                        rotate: 10,
-                        boxShadow: "0 0 24px 4px hsl(var(--accent)/0.25)",
-                        transition: {
-                          duration: 0.8,
-                          ease: "easeInOut",
-                        },
+                        rotate: 8,
+                        scale: 1.15,
                       }}
+                      transition={{ duration: 0.3 }}
+                      className={`w-16 h-16 rounded-2xl ${skill.bgColor} flex items-center justify-center mb-6`}
                     >
-                      <span className={`text-3xl ${skill.color}`}>{skill.icon}</span>
+                      <span className={`text-4xl ${skill.color}`}>
+                        {skill.icon}
+                      </span>
                     </motion.div>
-                    <h3 className="font-semibold mb-2 gradient-text">{skill.name}</h3>
+
+                    {/* Title */}
+                    <h3 className="text-xl font-semibold mb-3 text-foreground group-hover:text-accent transition-colors duration-300">
+                      {skill.name}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-sm leading-6 text-muted-foreground flex-grow">
+                      {skill.description}
+                    </p>
+
+                    {/* Bottom Divider */}
+                    <motion.div
+                      initial={{ width: "0%" }}
+                      whileHover={{ width: "100%" }}
+                      transition={{ duration: 0.4 }}
+                      className="h-[2px] bg-gradient-to-r from-accent to-cyan-400 rounded-full mt-6"
+                    />
                   </CardContent>
                 </Card>
               </motion.div>
             ))}
           </motion.div>
 
+          {/* Footer */}
           <motion.div
-            className="mt-12 text-center"
+            className="mt-16 text-center"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <p className="text-muted-foreground mb-6">
-              And many more technologies in the ever-evolving AI/ML ecosystem
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Always exploring new technologies and continuously expanding my AI
+              engineering toolkit to build better, smarter, and scalable AI
+              solutions.
             </p>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
-            >
-
-            </motion.div>
           </motion.div>
+
         </div>
       </section>
 
@@ -1830,85 +1759,7 @@ export default function Index({ showDetails = true }) {
                     </div>
                   </motion.div>
 
-                  {/* Phone Card */}
-                  <motion.div
-                    className="group relative overflow-hidden p-6 rounded-2xl bg-gradient-to-r from-ai-cyan/5 to-ai-cyan/10 border border-ai-cyan/20 cursor-pointer"
-                    variants={bounceIn}
-                    initial="initial"
-                    whileInView="animate"
-                    viewport={{ once: true }}
-                    whileHover={{
-                      scale: 1.02,
-                      y: -5,
-                      transition: { duration: 0.3 },
-                    }}
-                  >
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-ai-cyan/20 to-transparent opacity-0 group-hover:opacity-100"
-                      initial={{ x: "-100%" }}
-                      whileHover={{ x: "100%" }}
-                      transition={{ duration: 0.6, delay: 0.1 }}
-                    />
-                    <div className="relative flex items-center gap-4">
-                      <motion.div
-                        className="w-14 h-14 rounded-2xl bg-ai-cyan/20 flex items-center justify-center relative overflow-hidden"
-                        whileHover={{
-                          rotate: [0, -10, 10, 0],
-                          scale: 1.1,
-                        }}
-                        transition={{ duration: 0.6 }}
-                      >
-                        <motion.div
-                          className="absolute inset-0 bg-ai-cyan/30 rounded-2xl"
-                          animate={{
-                            scale: 1.05,
-                          }}
-                          transition={{
-                            duration: 2,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                          }}
-                          onClick={() => {
-                            window.location.href = "tel:+91 9256639008";
-                          }}
-                        />
-                        <Phone className="w-6 h-6 text-ai-cyan relative z-10" />
-                      </motion.div>
-                      <div className="flex-1">
-                        <motion.div
-                          className="font-semibold text-lg mb-1"
-                          whileHover={{ x: 5 }}
-                          transition={{ duration: 0.2 }}
 
-                          onClick={() => {
-                            window.location.href = "tel:+91 9256639008";
-                          }}
-                        >
-                          Call Me
-                        </motion.div>
-                        <motion.div
-                          className="text-muted-foreground"
-                          whileHover={{ x: 5 }}
-                          transition={{ duration: 0.2, delay: 0.1 }}
-
-                          onClick={() => {
-                            window.location.href = "tel:+91 9256639008";
-                          }}
-                        >
-                          +91 9256639008
-                        </motion.div>
-                      </div>
-                      <motion.div
-                        whileHover={{ x: 5, scale: 1.1 }}
-                        transition={{ duration: 0.2 }}
-                        onClick={() => {
-                          window.location.href = "tel:+91 9256639008";
-                        }}
-                      >
-                        <ExternalLink className="w-5 h-5 text-ai-cyan/70" />
-                      </motion.div>
-                    </div>
-                  </motion.div>
 
 
 
@@ -2014,125 +1865,11 @@ export default function Index({ showDetails = true }) {
                     />
                     <Mail className="w-5 h-5 text-foreground hover:text-matrix-green transition-colors relative z-10" />
                   </motion.a>
-                  <motion.a
-                    href="tel:+91 9256639008"
-                    className="relative w-12 h-12 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 flex items-center justify-center hover:border-data-purple/30 transition-all duration-300 cursor-pointer"
-                    whileHover={{
-                      scale: 1.3,
-                      y: -8,
-                      transition: { duration: 0.8 },
-                    }}
-                    whileTap={{ scale: 0.8 }}
-                    animate={{
-                      y: [0, -2.5, 0],
-                      rotate: [0, -1, 0],
-                      transition: {
-                        duration: 4.5,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: 0.8,
-                      },
-                    }}
-                  >
-                    <motion.div
-                      className="absolute inset-0 rounded-lg bg-data-purple/20"
-                      whileHover={{
-                        scale: [1, 1.5, 1],
-                        opacity: [0, 0.5, 0],
-                        transition: { duration: 0.8 },
-                      }}
-                    />
-                    <Phone className="w-5 h-5 text-foreground hover:text-data-purple transition-colors relative z-10" />
-                  </motion.a>
+
                 </div>
               </motion.div>
             </motion.div>
-
-            {/* Contact Form */}
-            <motion.div
-              variants={fadeInUp}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-            >
-              <Card className="bg-card/50 backdrop-blur-sm border-border/50">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
-                  <motion.form
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.7, delay: 0.2, type: "spring", stiffness: 80 }}
-                    viewport={{ once: true }}
-                    className="space-y-6"
-                    onSubmit={handleFormSubmit}
-                  >
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="name">Name</Label>
-                        <Input
-                          id="name"
-                          placeholder="Your full name"
-                          className="bg-background/50 border-border/50 focus:border-primary"
-                          value={form.name}
-                          onChange={handleFormChange}
-                          disabled={loading}
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="email">Email</Label>
-                        <Input
-                          id="email"
-                          type="email"
-                          placeholder="your.email@example.com"
-                          className="bg-background/50 border-border/50 focus:border-primary"
-                          value={form.email}
-                          onChange={handleFormChange}
-                          disabled={loading}
-                        />
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="subject">Subject</Label>
-                      <Input
-                        id="subject"
-                        placeholder="Project collaboration opportunity"
-                        className="bg-background/50 border-border/50 focus:border-primary"
-                        value={form.subject}
-                        onChange={handleFormChange}
-                        disabled={loading}
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="message">Message</Label>
-                      <Textarea
-                        id="message"
-                        placeholder="Tell me about your project or idea..."
-                        rows={6}
-                        className="bg-background/50 border-border/50 focus:border-primary resize-none"
-                        value={form.message}
-                        onChange={handleFormChange}
-                        disabled={loading}
-                      />
-                    </div>
-                    <motion.div
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Button
-                        type="submit"
-                        size="lg"
-                        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl hover:shadow-primary/25 transition-all duration-300"
-                        disabled={loading}
-                      >
-                        <Send className="mr-2 w-5 h-5" />
-                        {loading ? "Sending..." : "Send Message"}
-                      </Button>
-                    </motion.div>
-                  </motion.form>
-                </CardContent>
-              </Card>
-            </motion.div>
+                      
           </div>
         </div>
       </section>
@@ -2301,11 +2038,7 @@ export default function Index({ showDetails = true }) {
                     label: "prakuljn3105@gmail.com",
                     action: "mailto:prakuljn3105@gmail.com",
                   },
-                  {
-                    icon: "📱",
-                    label: "+91 9256639008",
-                    action: "tel:+919256639008",
-                  },
+
                 ].map((contact, index) => (
                   <motion.div
                     key={index}
