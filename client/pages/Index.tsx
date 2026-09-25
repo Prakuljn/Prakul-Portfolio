@@ -1869,7 +1869,7 @@ export default function Index({ showDetails = true }) {
                 </div>
               </motion.div>
             </motion.div>
-                      
+
           </div>
         </div>
       </section>
@@ -2078,6 +2078,8 @@ export default function Index({ showDetails = true }) {
                     stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
+
+                    
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
